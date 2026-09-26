@@ -33,17 +33,58 @@
 
         body {
             background-color: var(--bg-primary);
-            /* Gradiente bem mais leve para deixar a imagem super viva, mas ainda permitindo leitura */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url('/static/images/bg.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
             color: var(--text-primary);
             line-height: 1.6;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            position: relative;
+        }
+
+        /* Correção premium para mobile (iOS Safari bug com background fixed) */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url('/static/images/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            will-change: transform;
+        }
+
+        /* Responsividade refinada para Mobile */
+        @media (max-width: 768px) {
+            .input-group {
+                flex-direction: column;
+            }
+            .preview-content {
+                flex-direction: column;
+            }
+            .thumbnail-container {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 9/16;
+            }
+            .logo-text {
+                font-size: 1.4rem;
+            }
+            header {
+                padding: 1rem 0;
+            }
+            .card {
+                padding: 1.25rem;
+            }
+            .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+                bottom: 1rem;
+                right: 1rem;
+            }
+            .whatsapp-btn svg {
+                width: 28px;
+                height: 28px;
+            }
         }
 
         .container {
