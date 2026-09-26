@@ -2,6 +2,7 @@ services:
   - type: web
     name: tiktok-downloader-pro
     runtime: python
+    plan: free
     buildCommand: "./render-build.sh"
     startCommand: "./start.sh"
     envVars:
@@ -15,7 +16,3 @@ services:
         generateValue: true
       - key: FILE_EXPIRATION
         value: "900"
-    disk:
-      name: downloads
-      mountPath: /opt/render/project/downloads
-      sizeGB: 1

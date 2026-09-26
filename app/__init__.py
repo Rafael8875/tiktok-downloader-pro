@@ -42,14 +42,11 @@ def create_app():
     )
     app.config['MAX_CONTENT_LENGTH'] = 100 * 1024 * 1024  # 100MB max
 
-    # Download directory (Render uses persistent disk)
-    if os.environ.get('RENDER'):
-        app.config['DOWNLOAD_DIR'] = '/opt/render/project/downloads'
-    else:
-        app.config['DOWNLOAD_DIR'] = os.path.join(
-            os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-            'downloads'
-        )
+    # Download directory (ephemeral on Render, local otherwise)
+    app.config['DOWNLOAD_DIR'] = os.path.join(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+        'downloads'
+    )
 
     # Temp directory for intermediate files
     app.config['TEMP_DIR'] = os.path.join(app.config['DOWNLOAD_DIR'], 'temp')
