@@ -1,0 +1,10 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env
+downloads/*
+!downloads/.gitkeep
+bin/
+*.tar.xz
+.pytest_cache/

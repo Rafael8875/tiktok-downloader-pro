@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: tiktok-downloader-pro
+    runtime: python
+    buildCommand: "./render-build.sh"
+    startCommand: "./start.sh"
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.6"
+      - key: FLASK_DEBUG
+        value: "false"
+      - key: PORT
+        value: "10000"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: FILE_EXPIRATION
+        value: "900"
+    disk:
+      name: downloads
+      mountPath: /opt/render/project/downloads
+      sizeGB: 1
