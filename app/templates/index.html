@@ -863,66 +863,7 @@
 
         </div>
 
-        <!-- FAQ Section -->
-        <section class="card">
-            <h3 style="margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);">❓ Perguntas Frequentes</h3>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    É gratuito?
-                    <span class="faq-icon">▼</span>
-                </div>
-                <div class="faq-answer"><div class="faq-answer-inner">Sim, totalmente gratuito e sem anúncios.</div></div>
-            </div>
 
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Funciona com vídeos privados?
-                    <span class="faq-icon">▼</span>
-                </div>
-                <div class="faq-answer"><div class="faq-answer-inner">Não. Apenas vídeos públicos com download habilitado pelo criador podem ser baixados.</div></div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Posso baixar em HD?
-                    <span class="faq-icon">▼</span>
-                </div>
-                <div class="faq-answer"><div class="faq-answer-inner">Sim, oferecemos opções de 360p até 1080p, quando disponíveis.</div></div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    É seguro?
-                    <span class="faq-icon">▼</span>
-                </div>
-                <div class="faq-answer"><div class="faq-answer-inner">Sim. Não coletamos dados pessoais, não armazenamos URLs e os arquivos são removidos automaticamente do servidor.</div></div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Por que o download falhou?
-                    <span class="faq-icon">▼</span>
-                </div>
-                <div class="faq-answer"><div class="faq-answer-inner">Pode ser que o vídeo seja privado, tenha download desabilitado, ou esteja protegido por CAPTCHA. Tente abrir o link no TikTok diretamente.</div></div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Posso converter para MP3?
-                    <span class="faq-icon">▼</span>
-                </div>
-                <div class="faq-answer"><div class="faq-answer-inner">Sim, quando a conversão for tecnicamente possível, oferecemos opções de 128, 192 e 320 kbps.</div></div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    Como funciona o GIF?
-                    <span class="faq-icon">▼</span>
-                </div>
-                <div class="faq-answer"><div class="faq-answer-inner">Selecionamos um trecho de até 10 segundos do vídeo e convertemos para GIF animado usando FFmpeg.</div></div>
-            </div>
-        </section>
 
     </main>
 
@@ -979,15 +920,7 @@
             });
         });
 
-        // ============================================================
-        // FAQ
-        // ============================================================
-        function toggleFaq(element) {
-            const item = element.parentElement;
-            const isActive = item.classList.contains('active');
-            document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
-            if (!isActive) item.classList.add('active');
-        }
+
 
         // ============================================================
         // Modals
